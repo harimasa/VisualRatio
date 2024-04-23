@@ -9,7 +9,8 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import ru.matt.VRatio;
+import ru.matt.config.ModConfig;
+
 
 @Mixin(GameRenderer.class)
 public abstract class MixinGameRenderer {
@@ -36,7 +37,7 @@ public abstract class MixinGameRenderer {
 				matrixStack.translate(zoomX, -zoomY, 0.0f);
 				matrixStack.scale(zoom, zoom, 1.0f);
 			}
-			matrixStack.peek().getPositionMatrix().mul(new Matrix4f().setPerspective((float) (fov * 0.01745329238474369), VRatio.ratio.getValue(), 0.05f, viewDistance * 4.0f));
+			matrixStack.peek().getPositionMatrix().mul(new Matrix4f().setPerspective((float) (fov * 0.01745329238474369), ModConfig.Visualratioinf(), 0.05f, viewDistance * 4.0f));
 			cir.setReturnValue(matrixStack.peek().getPositionMatrix());
 	}
 }

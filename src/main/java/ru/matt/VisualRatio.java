@@ -1,16 +1,14 @@
 package ru.matt;
 
-import net.fabricmc.api.ModInitializer;
+import me.shedaniel.autoconfig.AutoConfig;
+import net.fabricmc.api.ClientModInitializer;
+import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
+import ru.matt.config.ModConfig;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-public class VisualRatio implements ModInitializer {
-	public static VRatio vRatio = new VRatio();
-	public static final Logger LOGGER = LoggerFactory.getLogger("visualratio");
-
+public class VisualRatio implements ClientModInitializer {
+	public static final ModConfig MOD_CONFIG = AutoConfig.register(ModConfig.class, GsonConfigSerializer::new).get();
 	@Override
-	public void onInitialize() {
-
+	public void onInitializeClient() {
+		ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 	}
 }
