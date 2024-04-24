@@ -14,8 +14,6 @@ import ru.matt.config.ModConfig;
 
 @Mixin(GameRenderer.class)
 public abstract class MixinGameRenderer {
-	@Shadow
-	public abstract void render(float tickDelta, long startTime, boolean tick);
 
 	@Shadow
 	private float zoom;
