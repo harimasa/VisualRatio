@@ -20,7 +20,7 @@
 			"ru.matt.VisualRatio"
 		],
 		"modmenu": [
-			"ru.matt.Impl.ModMenuImpl"
+			"ru.matt.config.ModMenuInit"
 		]
 	},
 	"mixins": [
@@ -31,10 +31,6 @@
 		"minecraft": "~1.20.1",
 		"java": ">=17",
 		"fabric-api": "*",
-		"cloth-config": ">=11.1.118",
-		"modmenu": ">=4.1.0"
-	},
-	"suggests": {
-		"another-mod": "*"
+		"modmenu": ">=7.2.2"
 	}
 }

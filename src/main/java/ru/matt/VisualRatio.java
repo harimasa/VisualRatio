@@ -1,14 +1,28 @@
 package ru.matt;
 
-import me.shedaniel.autoconfig.AutoConfig;
 import net.fabricmc.api.ClientModInitializer;
-import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
-import ru.matt.config.ModConfig;
+
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.minecraft.client.option.KeyBinding;
+import org.lwjgl.glfw.GLFW;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import ru.matt.config.VisualRatioConfig;
+import ru.matt.config.VisualRatioScreen;
 
 public class VisualRatio implements ClientModInitializer {
-	public static final ModConfig MOD_CONFIG = AutoConfig.register(ModConfig.class, GsonConfigSerializer::new).get();
+	public static KeyBinding openconfig;
+	public static final Logger LOGGER = LoggerFactory.getLogger("VisualRatio");
+
 	@Override
 	public void onInitializeClient() {
-		ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+		VisualRatioConfig.load();
+		openconfig = KeyBindingHelper.registerKeyBinding(new KeyBinding("visualratio.key", GLFW.GLFW_KEY_UNKNOWN, "VisualRatio"));
+		ClientTickEvents.END_CLIENT_TICK.register(mc -> {
+			if (openconfig.wasPressed()) {
+				mc.setScreen(new VisualRatioScreen(null));
+			}
+		});
 	}
 }

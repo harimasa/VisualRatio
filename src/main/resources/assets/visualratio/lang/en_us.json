@@ -1,4 +1,5 @@
 {
-  "text.autoconfig.visualratio.title": "VisualRatio",
-  "text.autoconfig.visualratio.option.Visualratioinf": "Aspect Ratio (0 - 10)"
+  "visualratio.enabled": "Enable?",
+  "visualratio.ratio": "Aspect Ratio",
+  "visualratio.key": "Bind to open Config"
 }
