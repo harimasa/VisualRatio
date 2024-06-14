@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "visualratio",
+	"version": "${version}",
+	"name": "VisualRatio",
+	"description": "This mod changes the visual ratio to a 4:3 view, which allows you to hit any models much better!!",
+	"authors": [
+		"femboyPig"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/visualratio",
+		"sources": "https://github.com/femboyPig/VisualRatio",
+		"issues": "https://github.com/femboyPig/VisualRatio/issues"
+	},
+	"license": "MIT License",
+	"icon": "assets/visualratio/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"ru.femboypig.VisualRatio"
+		],
+		"modmenu": [
+			"ru.femboypig.config.Modmenu"
+		]
+	},
+	"mixins": [
+		"visualratio.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.10",
+		"minecraft": "~1.21",
+		"java": ">=17",
+		"fabric-api": "*",
+		"modmenu": "*",
+		"yet_another_config_lib_v3": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
