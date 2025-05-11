@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "visualratio",
+	"version": "${version}",
+	"name": "VisualRatio",
+	"description": "This mod changes the visual ratio to a 4:3 view, which allows you to hit any models much better!!",
+	"authors": [
+		"harimasa"
+	],
+	"contact": {
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/visualratio",
+		"sources": "https://github.com/harimasa/VisualRatio",
+		"issues": "https://github.com/harimasa/VisualRatio/issues"
+	},
+	"license": "MIT License",
+	"icon": "assets/visualratio/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"ru.harimasa.VisualRatio"
+		],
+		"modmenu": [
+			"ru.harimasa.config.ModMenu"
+		]
+	},
+	"mixins": [
+		"visualratio.mixins.json"
+	],
+	"depends": {
+		"fabricloader": "*",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*",
+		"modmenu": "*",
+		"yet_another_config_lib_v3": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
